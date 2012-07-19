@@ -1,0 +1,260 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>RdL.finalproject by RdL87</title>
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script src="javascripts/respond.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <!--[if lt IE 8]>
+    <link rel="stylesheet" href="stylesheets/ie.css">
+    <![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+  </head>
+  <body>
+      <div id="header">
+        <nav>
+          <li class="fork"><a href="https://github.com/RdL87/RdL.finalProject">View On GitHub</a></li>
+          <li class="downloads"><a href="https://github.com/RdL87/RdL.finalProject/zipball/master">ZIP</a></li>
+          <li class="downloads"><a href="https://github.com/RdL87/RdL.finalProject/tarball/master">TAR</a></li>
+          <li class="title">DOWNLOADS</li>
+        </nav>
+      </div><!-- end header -->
+
+    <div class="wrapper">
+
+      <section>
+        <div id="title">
+          <h1>RdL.finalproject</h1>
+          <p>(La Rotonda), Vicenza, 1591, Andrea Palladio</p>
+          <hr>
+          <span class="credits left">Project maintained by <a href="https://github.com/RdL87">RdL87</a></span>
+          <span class="credits right">Hosted on GitHub Pages &mdash; Theme by <a href="http://twitter.com/#!/michigangraham">mattgraham</a></span>
+        </div>
+
+        <h1>Villa Capra (La rotonda) of Andrea Palladio</h1>
+
+<h2>A little history...</h2>
+
+<h3>Andrea Palladio</h3>
+
+<p>Andrea Palladio (30 November 1508 – 19 August 1580) was an architect active in the Republic of Venice. Palladio, influenced by Roman and Greek architecture, primarily by Vitruvius, is widely considered the most influential individual in the history of Western architecture. All of his buildings are located in what was the Venetian Republic, but his teachings, summarized in the architectural treatise, The Four Books of Architecture, gained him wide recognition.The city of Vicenza and the Palladian Villas of the Veneto are UNESCO World Heritage Sites.</p>
+
+<h3>Villa Capra "La Rotonda"</h3>
+
+<p>Villa La Rotonda is a Renaissance villa just outside Vicenza, northern Italy, designed by Andrea Palladio. The proper name is Villa Almerico Capra, but it is also known as La Rotonda, Villa Rotonda, Villa Capra and Villa Almerico. The name "Capra" derives from the Capra brothers, who completed the building after it was ceded to them in 1591. Like other works by Palladio in Vicenza and the surrounding area, the building is conserved as part of the World Heritage Site "City of Vicenza and the Palladian Villas of the Veneto".
+In 1565 a priest, Paolo Almerico, on his retirement from the Vatican (as referendario apostolico of Pope Pius IV and afterwards Pius V), decided to return to his home town of Vicenza in the Venetian countryside and build a country house. This house, later known as 'La Rotonda', was to be one of Palladio's best-known legacies to the architectural world. Villa Capra may have inspired a thousand subsequent buildings, but the villa was itself inspired by the Pantheon in Rome.</p>
+
+<p><img src="https://github.com/RdL87/RdL.finalProject/blob/master/Villa_Rotonda_side.jpg?raw=true" alt="prima"></p>
+
+<h2>Construction of the model</h2>
+
+<h3>...by PLASM</h3>
+
+<p>Using the functions of libraries plasm (functional language for computing with geometry) implemented with javascript you can create 3D models of all kinds. 
+You only need a little patience, a lot of study and a little practice (actually a lot of practice!).</p>
+
+<p><img src="https://github.com/RdL87/RdL.finalProject/blob/master/intera.png?raw=true" alt="int"></p>
+
+<h3>Study of the villa</h3>
+
+<p>Looking at the villa is easy to notice the symmetry between the various elements that compose it.You can identify the basic elements that make up the villa and to represent them. Then you can focus on details that decorate it.</p>
+
+<h3>Decomposition of the villa</h3>
+
+<p>The three essential elements that make up the villa are a central body, an entry, and a dome in the center of it. Now we will see how these three elements have been made ​​even looking at pictures and a bit of code.</p>
+
+<h3>Central body</h3>
+
+<p><img src="https://github.com/RdL87/RdL.finalProject/blob/master/CorpoCentrale.png?raw=true" alt="cent"></p>
+
+<p>To make the central body is needed to build a single-sided. 
+We can see the code for the skeleton of the facade only with door and windows with no details.</p>
+
+<blockquote>
+<p>var front1 = SIMPLEX_GRID([
+  [20],
+  [2],
+  [1.5]
+  ]);</p>
+
+<p>var front2 = SIMPLEX_GRID([
+  [2.5,-1,13,-1,2.5],
+  [-2,1],
+  [1.5]
+  ]);</p>
+
+<p>var front3 = SIMPLEX_GRID([
+  [20],
+  [-3,1],
+  [1.5]
+  ]);</p>
+
+<p>var front4 = SIMPLEX_GRID([
+  [9,-2,9],
+  [-4,1],
+  [1.5]
+  ]);</p>
+
+<p>var front5 = SIMPLEX_GRID([
+  [2.5,-1,2.5,-1,2,-2,2,-1,2.5,-1,2.5],
+  [-5,3],
+  [1.5]
+  ]);</p>
+
+<p>var front6 = SIMPLEX_GRID([
+  [9,-2,9],
+  [-8,1],
+  [1.5]
+  ]);</p>
+
+<p>var front7 = SIMPLEX_GRID([
+  [20],
+  [-9,7],
+  [1.5]
+  ]);</p>
+
+<p>var front8 = SIMPLEX_GRID([
+  [2.5,-1,2.5,-1,6,-1,2.5,-1,2.5],
+  [-16,1],
+  [1.5]
+  ]);</p>
+
+<p>var front9 = SIMPLEX_GRID([
+  [20],
+  [-17,1],
+  [1.5]
+  ]);</p>
+
+<p>allfront = COLOR([0.992,0.96,0.901])(STRUCT([front1,front2,front3,front4,front5,front6,front7,front8,front9]));</p>
+</blockquote>
+
+<p>Indeed, given the symmetry of the villa, the other three sides can be obtained by rotations and translations of the first how we can see in the code below.</p>
+
+<blockquote>
+<p>//riunisco tutto nella struttura front</p>
+
+<p>var front = STRUCT([allfront, border,borderlines,windowDecorations,doorDecorations,
+glasses,grid,middlewindowframe,upperwindowframe,tetto]);</p>
+
+<p>//mediante delle rototraslazioni dalla prima facciata ottengo il cubo centrale della villa</p>
+
+<p>var ffront = T([0,2])([20,20])(R([0,2])([PI])(front));</p>
+
+<p>var lfront = T([2])([20])(R([0,2])([PI/2])(front));</p>
+
+<p>var rfront = T([0])([20])(R([0,2])([3/2*PI])(front));</p>
+</blockquote>
+
+<h3>Dome</h3>
+
+<p>The dome is located exactly in the center of the house and is composed of a cylinder, a roof (precisely dome) and a particular place on its tip.</p>
+
+<p><img src="https://github.com/RdL87/RdL.finalProject/blob/master/Cupola.png?raw=true" alt="dome"></p>
+
+<p>The roof of the dome and the detail at the tip have been obtained so:</p>
+
+<blockquote>
+<p>//disegno il tetto della cupola</p>
+
+<p>var domain = DOMAIN([[0,1],[0,2*PI]])([10,10]);</p>
+
+<p>var profile = BEZIER(S0)([[7,25,25],[6,26,26],[5,26.5,26.5],[4,26.8,26.8],[3,27.1,27.1],[2,27.3,27.3],[1,27.5,27.5]]);
+var mapping = ROTATIONAL_SURFACE(profile);</p>
+
+<p>var surface = COLOR([0.804,0.31,0.223,1])(MAP(mapping)(domain));</p>
+
+<p>tettoCupola = T([0,2])([10,10])(R([1,2])([-PI/2])(surface));</p>
+
+<p>// disegno il dettaglio sulla punta della cupola</p>
+
+<p>var domain = DOMAIN([[0,1],[0,2*PI]])([10,10]);</p>
+
+<p>var profile = BEZIER(S0)([[1,27.5,27.5],[1,28,28],[0.5,28.4,28.4],[0.2,29,29],[0.1,29.5,29.5],[0,29.6,29.6]]);</p>
+
+<p>var mapping = ROTATIONAL_SURFACE(profile);</p>
+
+<p>var surface = MAP(mapping)(domain);</p>
+
+<p>puntaCupola = COLOR([0.992,0.96,0.901])(T([0,2])([10,10])(R([1,2])([-PI/2])(surface)));</p>
+</blockquote>
+
+<h3>Entry</h3>
+
+<p><img src="https://github.com/RdL87/RdL.finalProject/blob/master/Ingresso.jpeg?raw=true" alt="ingr"></p>
+
+<p>The entry is made in turn by a flight of steps, a basement with a subway, a pediment, roof and six Ionic columns.
+We can observe from the side..</p>
+
+<p><img src="https://github.com/RdL87/RdL.finalProject/blob/master/ingressoVistalato.png?raw=true" alt="lato"></p>
+
+<p>..and from the front</p>
+
+<p><img src="https://github.com/RdL87/RdL.finalProject/blob/master/IngressoVistaFronte.png?raw=true" alt="difronte"></p>
+
+<p>Probably,the most interesting code to see is that of the ionic column. </p>
+
+<blockquote>
+<p>//disegno la colonna</p>
+
+<p>baseqColonna1 = T([0,1])([-0.50,-0.50]) (CUBOID([1,1,0.2]));</p>
+
+<p>var domain = DOMAIN([[0,1],[0,2*PI]])([10,10]);</p>
+
+<p>var profile = BEZIER(S0)([[0.4,0.4,0],[0.4,0.4,0.2],[0,0,0.21]]);</p>
+
+<p>var mapping = ROTATIONAL_SURFACE(profile);</p>
+
+<p>var surface = MAP(mapping)(domain);</p>
+
+<p>var baserColonna1 = T([2])([0.2])(surface);</p>
+
+<p>var profile = BEZIER(S0)([[0.3,0.3,0],[0.3,0.3,6]]);</p>
+
+<p>var mapping = ROTATIONAL_SURFACE(profile);</p>
+
+<p>var corpoColonna = MAP(mapping)(domain);</p>
+
+<p>var baserColonna2 = T([2])([6])(R([1,2])([PI])(baserColonna1));</p>
+
+<p>var baseqColonna2 = T([0,1,2])([-0.50,-0.50,5.8]) (CUBOID([1,1,0.2]));</p>
+
+<p>var profile = BEZIER(S0)([[0,0,-0.001],[0.3,0.3,0],[0.01,0.01,0.1],[0.01,0.01,0.9],[0.3,0.3,1],[0,0,1.01]]);</p>
+
+<p>var mapping = ROTATIONAL_SURFACE(profile);</p>
+
+<p>var surface = MAP(mapping)(domain);</p>
+
+<p>var decorazioneColonna1 = T([0,1,2])([-0.50,0.25,5.5]) (R([0,2])([PI/2])(surface));</p>
+
+<p>var decorazioneColonna2 = T([1])([-0.50])(decorazioneColonna1);</p>
+
+<p>var colonna1 = T([0,1])([0.5,1.2]) (STRUCT([baseqColonna1,baseqColonna2, baserColonna1,baserColonna2, corpoColonna,decorazioneColonna1,decorazioneColonna2])); </p>
+</blockquote>
+
+<h2>Conclusions</h2>
+
+<p>The realization of this project was the culmination of a process that began early in the course of computer graphics.It was not easy, but remembering my first design, now i'm very satisfied. There is still much to improve but looking at the images below unless some details the villas are very similar.</p>
+
+<p><img src="https://github.com/RdL87/RdL.finalProject/blob/master/villaDilato.jpg?raw=true" alt="lato"></p>
+
+<p><img src="https://github.com/RdL87/RdL.finalProject/blob/master/lato.jpg?raw=true" alt="lato2"></p>
+
+<p>Thanks to the professor and to his worthy assistants.</p>
+
+<p>Roberto di Lallo, CVD Lab, 454591</p>
+
+<p>For the complete code of the model click <a href="https://github.com/cvdlab-cg/454591/blob/master/final-project/laRotonda.js">here</a></p>
+      </section>
+
+    </div>
+    <!--[if !IE]><script>fixScale(document);</script><!--<![endif]-->
+    
+  </body>
+</html>
